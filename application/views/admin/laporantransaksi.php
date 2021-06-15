@@ -12,7 +12,7 @@
                 <div class="card-box table-responsive">
 
                     <br>
-                    <form action="<?php echo base_url('dompdfTransaksi');?>" target="_blank" method="post" class="form-horizontal" role="form">
+                    <form action="<?php echo base_url('DompdfTransaksi');?>" target="_blank" method="post" class="form-horizontal" role="form">
                     <div class="form-group">
                         <label class="control-label col-sm-4">Date Range</label>
                         <div class="col-sm-8">

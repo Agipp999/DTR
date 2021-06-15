@@ -18,7 +18,6 @@
                             <th class="text-center">No</th>
                             <th>Nama Admin</th>
                             <th>Nomer Telfon</th>
-                            <th>Status</th>
                             <th>Username</th>
                             <th>Password</th>
                             <th>Level</th>
@@ -33,19 +32,18 @@
                                   <td>".$no."</td>
                                   <td>".$u->namaAdmin."</td>
                                   <td>".$u->noTelfon."</td>
-                                  <td>".$u->status_2."</td>
                                   <td>".$u->username."</td>
                                   <td>".$u->password_2."</td>
                                   <td>".$u->level."</td>
                                   <td>
                                   <a href ='#' class='on-default edit-row btn btn-primary'
                                     data-toggle='modal' data-target='#custom-width-modal' 
-                                    onClick=\"SetInput('".$u->idt_admin."','".$u->namaAdmin."','".$u->noTelfon."','".$u->status_2."',
+                                    onClick=\"SetInput('".$u->idt_admin."','".$u->namaAdmin."','".$u->noTelfon."',
                                   '".$u->username."','".$u->password_2."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-pen'></i></a>
                                     <a href ='#' class='on-default default-row btn btn-danger'
                                     data-toggle='modal' data-target='#delete-modal' 
-                                    onClick=\"setInput1('".$u->idt_admin."','".$u->namaAdmin."','".$u->noTelfon."','".$u->status_2."',
+                                    onClick=\"setInput1('".$u->idt_admin."','".$u->namaAdmin."','".$u->noTelfon."',
                                   '".$u->username."','".$u->password_2."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-trash'></i></a>
                                 </tr>";
@@ -85,17 +83,6 @@
                                 <div class="form-group">
                                     <label for="field-3" class="control-label">Nomor Telepon</label>
                                     <input type="text" class="form-control" id="noTelfon" name="noTelfon" required >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="field-3" class="control-label">Status</label>
-                                    <select type="text" class="form-control" id="status_2" name="status_2" data-style="btn-white" required >
-                                        <option value="Aktif">Aktif</option>
-                                        <option value="Tidak Aktif">Tidak Aktif</option>
-                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -165,29 +152,26 @@
               </div>
 
           <script type="text/javascript">
-                function SetInput(idt_admin, namaAdmin, noTelfon, status_2, username, password_2, level) {
+                function SetInput(idt_admin, namaAdmin, noTelfon, username, password_2, level) {
                     document.getElementById('idt_admin').value = idt_admin;
                     document.getElementById('namaAdmin').value = namaAdmin;
                     document.getElementById('noTelfon').value = noTelfon;
-                    document.getElementById('status_2').value = status_2;
                     document.getElementById('username').value = username;
                     document.getElementById('password_2').value = password_2;
                     document.getElementById('level').value = level;
                 }
-                function setInput1(idt_admin, namaAdmin, noTelfon, status_2, username, password_2, level) {
+                function setInput1(idt_admin, namaAdmin, noTelfon, username, password_2, level) {
                     document.getElementById('idt_admin1').value = idt_admin;
                     document.getElementById('namaAdmin1').value = namaAdmin;
                     document.getElementById('noTelfon1').value = noTelfon;
-                    document.getElementById('status_21').value = status_2;
                     document.getElementById('username1').value = username;
                     document.getElementById('password_21').value = password_2;
                     document.getElementById('level1').value = level;
                 }
-                function ResetInput(idt_admin, namaAdmin, noTelfon, status_2, username, password_2, level) {
+                function ResetInput(idt_admin, namaAdmin, noTelfon, username, password_2, level) {
                     document.getElementById('idt_admin').value = "";
                     document.getElementById('namaAdmin').value = "";
                     document.getElementById('noTelfon').value = "";
-                    document.getElementById('status_2').value = "";
                     document.getElementById('username').value = "";
                     document.getElementById('password_2').value = "";
                     document.getElementById('level').value = "";

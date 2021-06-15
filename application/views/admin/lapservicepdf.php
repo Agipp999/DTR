@@ -1,8 +1,43 @@
-<pre>
-    <table width="100%">
-    <tr align="center">
-        <td align="center">
-            <hr><width="100" height="75"></hr>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        th {
+            height: 30px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 3px;
+        }
+
+        thead {
+            background: lightgray;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
             <center><b><font size="5" face="arial">Duta Ryana Tour and Travel</font><b></center>
             <center><b><font size="4" face="Courier New">LAPORAN SERVICE</font></b></center>
             <center><b><?php
@@ -12,10 +47,6 @@
             ?><b></center>     
             <center><b> Jln. Raya Surabaya-Madiun, Sumberbening - Balerejo, Madiun <b></center>
             <hr><width="100" height="75"></hr>       
-        </b></p><br>
-        </td>
-    </tr>
-    </table>
     <table style="width=100%;" border="1" align="center">
         <tr align="center">
                     <td> No </td>
@@ -40,22 +71,5 @@
                     } 
                 ?>
     </table>
-    <table align="center" style="width:700px; border:none;margin-top:5px;margin-bottom:20px;">
-    <tr>
-        <td align="right">Madiun, <?php echo date('d-m-y')?></td>
-    </tr>
-    <tr>
-        <td align="right"></td>
-    </tr>
-   
-    <tr>
-    <td><br/><br/></td>
-    </tr>    
-    <tr>
-        
-    </tr>
-    <tr>
-        <td align="center"></td>
-    </tr>
-</table>
-</pre>
+
+    </body>

@@ -10,7 +10,6 @@ class M_admin extends CI_Model{
 		$data = array(
 		    'namaAdmin' => $this->input->post('namaAdmin'),
             'noTelfon' => $this->input->post('noTelfon'),
-			'status_2' => $this->input->post('status_2'),
 			'username' => $this->input->post('username'),
 			'password_2' => MD5($this->input->post('password_2')),
 			'level' => $this->input->post('level')
@@ -24,7 +23,6 @@ class M_admin extends CI_Model{
 		$data = array(
             'namaAdmin' => $this->input->post('namaAdmin'),
             'noTelfon' => $this->input->post('noTelfon'),
-			'status_2' => $this->input->post('status_2'),
 			'username' => $this->input->post('username'),
 			'password_2' => MD5($this->input->post('password_2')),
 			'level' => $this->input->post('level')

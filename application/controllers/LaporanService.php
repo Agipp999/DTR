@@ -20,19 +20,7 @@ class LaporanService extends CI_Controller {
 	    }else{
 			echo "Halaman Tidak ditemukan";
 		}
-		}
-	public function laporan()
-	{
-			$tanggalAwal = $this->input->post('tanggalAwal');
-			$tanggalAkhir = $this->input->post('tanggalAkhir');
-			$data['t_laporanservice'] = $this->M_laporanservice->laporan('t_service', $tanggalAwal, $tanggalAkhir)->result();
-			$data['tanggalAwal'] = $tanggalAwal;
-			$data['tanggalAkhir'] = $tanggalAkhir;
-			$this->load->library('pdf');
-			$this->pdf->setPaper('A4', 'potrait');
-			$this->pdf->filename = "laporan-Service.pdf";
-			$this->pdf->load_view('admin/serviceberkala', $data);
-	}		
+		}		
 	public function get_all_data()
 	{
 		 $data['result'] = $this->model->get_data(); // 

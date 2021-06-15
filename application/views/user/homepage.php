@@ -14,6 +14,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo base_url('TentangPerusahaan'); ?>"><i class="fa fa-plus-square"></i>Tentang Perusahaan</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo base_url('login'); ?>"><i class="fa fa-user"></i>Login</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>

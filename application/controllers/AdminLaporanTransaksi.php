@@ -21,18 +21,7 @@ class AdminLaporanTransaksi extends CI_Controller {
 			echo "Halaman Tidak ditemukan";
 	}
 	}
-	public function laporan()
-	{
-			$tanggalAwal = $this->input->post('tanggalAwal');
-			$tanggalAkhir = $this->input->post('tanggalAkhir');
-			$data['t_laporantransaksi'] = $this->M_supertransaksi->laporan('t_transaksi', $tanggalAwal, $tanggalAkhir)->result();
-			$data['tanggalAwal'] = $tanggalAwal;
-			$data['tanggalAkhir'] = $tanggalAkhir;
-			$this->load->library('pdf');
-			$this->pdf->setPaper('A4', 'potrait');
-			$this->pdf->filename = "laporan-Transaksi.pdf";
-			$this->pdf->load_view('master/datatransaksi', $data);
-	}		
+		
 	public function get_all_data()
 	{
 		 $data['result'] = $this->model->get_data(); // 

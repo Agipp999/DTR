@@ -9,6 +9,6 @@ class M_GPS extends CI_Model{
 	public function get_all_data(){
 		$this->db->select('*');
 		$this->db->from('t_user');
-		return $this->db->get()->result();
+		return $this->db->get();
 	}
 }
