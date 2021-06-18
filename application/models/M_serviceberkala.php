@@ -7,11 +7,9 @@ class M_serviceberkala extends CI_Model{
     }
     function tambah_data(){
 		$data = array(
-			
 			'idt_armada' => $this->input->post('idt_armada'),
-			'idt_armada' => $this->input->post('idt_armada'),
-      'tanggalService' => $this->input->post('tanggalService'),
-      'biayaService' => $this->input->post('biayaService'),
+			'tanggalService' => $this->input->post('tanggalService'),
+			'biayaService' => $this->input->post('biayaService'),
 			'keterangan' => $this->input->post('keterangan'),
 		);
 	$this->db->insert('t_service', $data);
@@ -20,7 +18,6 @@ class M_serviceberkala extends CI_Model{
 	
 	function ubah_data ($idt_service){
 		$data = array(
-			'idt_armada' => $this->input->post('idt_armada'),
 			'idt_armada' => $this->input->post('idt_armada'),
             'tanggalService' => $this->input->post('tanggalService'),
             'biayaService' => $this->input->post('biayaService'),

@@ -26,9 +26,5 @@ class LaporanTransaksi extends CI_Controller {
 		 $data['result'] = $this->model->get_data(); // 
 		$this->load->view('admin/laporantransaksi',$data); //past the data to the view
 	}
-			
-			
-			//$this->load->view('master/viewlaporanpembelisayur', $data);
-	
 
 }

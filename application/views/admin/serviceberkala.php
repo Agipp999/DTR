@@ -38,11 +38,12 @@
                                       <td>
                                       <a href ='#' class='on-default edit-row btn btn-primary'
                                     data-toggle='modal' data-target='#custom-width-modal' 
-                                    onClick=\"SetInput('".$u->idt_service."','".$u->idt_armada."','".$u->idt_armada."',
-                                        '".$u->tanggalService."','".$u->biayaService."','".$u->keterangan."')\" class='col-sm-6 col-md-4 col-lg-3'><i class='fas fa-pen'></i></a>
-                                        <a href ='#' class='on-default default-row btn btn-danger'
-                                        data-toggle='modal' data-target='#delete-modal' 
-                                        onClick=\"setInput1('".$u->idt_service."','".$u->idt_armada."','".$u->idt_armada."',
+                                    onClick=\"SetInput('".$u->idt_service."',
+                                        '".$u->tanggalService."','".$u->biayaService."','".$u->keterangan."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                        <i class='fas fa-pen'></i></a>
+                                    <a href ='#' class='on-default default-row btn btn-danger'
+                                      data-toggle='modal' data-target='#delete-modal' 
+                                      onClick=\"setInput1('".$u->idt_service."',
                                         '".$u->tanggalService."','".$u->biayaService."','".$u->keterangan."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                         <i class='fas fa-trash'></i></a>
                                   </tr>";
@@ -164,26 +165,20 @@
               </div>
 
           <script type="text/javascript">
-                function SetInput(idt_service,idt_armada, namaArmada, noKendaraan, tanggalService, biayaService, keterangan) {
+                function SetInput(idt_service, tanggalService, biayaService, keterangan) {
                     document.getElementById('idt_service').value = idt_service;
-                    document.getElementById('namaArmada').value = namaArmada;
-                    document.getElementById('noKendaraan').value = noKendaraan;
                     document.getElementById('tanggalService').value = tanggalService;
                     document.getElementById('biayaService').value = biayaService;
                     document.getElementById('keterangan').value = keterangan;
                 }
-                function setInput1(idt_service,idt_armada, namaArmada, noKendaraan, tanggalService, biayaService, keterangan) {
+                function setInput1(idt_service, tanggalService, biayaService, keterangan) {
                     document.getElementById('idt_service1').value = idt_service;
-                    document.getElementById('namaArmada1').value = namaArmada;
-                    document.getElementById('noKendaraan1').value = noKendaraan;
                     document.getElementById('tanggalService1').value = tanggalService;
                     document.getElementById('biayaService1').value = biayaService;
                     document.getElementById('keterangan1').value = keterangan;
                 }
-                function ResetInput(idt_service,idt_armada, namaArmada, noKendaraan, tanggalService, biayaService, keterangan) {
+                function ResetInput(idt_service, tanggalService, biayaService, keterangan) {
                     document.getElementById('idt_service').value = '';
-                    document.getElementById('namaArmada').value = '';
-                    document.getElementById('noKendaraan').value = '';
                     document.getElementById('tanggalService').value = '';
                     document.getElementById('biayaService').value = '';
                     document.getElementById('keterangan').value = '';

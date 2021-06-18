@@ -13,6 +13,7 @@ class M_datatransaksi extends CI_Model{
     function tambah_data(){
 
         $data = array(
+            'idt_armada' => $this->input->post('idt_armada'),
             'tanggalTransaksi' => $this->input->post('tanggalTransaksi'),
             'namaPenyewa' => $this->input->post('namaPenyewa'),
             'lamaSewa' => $this->input->post('lamaSewa'),
@@ -21,8 +22,6 @@ class M_datatransaksi extends CI_Model{
             'keteranganSewa' => $this->input->post('keteranganSewa'),
             'alamatPenyewa' => $this->input->post('alamatPenyewa'),
             'telponPenyewa' => $this->input->post('telponPenyewa'),
-            'idt_armada' => $this->input->post('idt_armada'),
-            'idt_armada' => $this->input->post('idt_armada'),
         );
 	$this->db->insert('t_transaksi', $data);
 	redirect('../DataTransaksi');	
@@ -31,17 +30,13 @@ class M_datatransaksi extends CI_Model{
     function ubah_data ($idt_transaksi) {
  
 		$data = array(
-                 
+            'idt_armada' => $this->input->post('idt_armada'),
             'tanggalTransaksi' => $this->input->post('tanggalTransaksi'),
             'namaPenyewa' => $this->input->post('namaPenyewa'),
             'lamaSewa' => $this->input->post('lamaSewa'),
             'totalHarga' => $this->input->post('totalHarga'),
             'statusPembayaran' => $this->input->post('statusPembayaran'),
             'keteranganSewa' => $this->input->post('keteranganSewa'),
-            'alamatPenyewa' => $this->input->post('alamatPenyewa'),
-            'telponPenyewa' => $this->input->post('telponPenyewa'),
-            'idt_armada' => $this->input->post('idt_armada'),
-            'idt_armada' => $this->input->post('idt_armada'),
 			);
 
 		$this->db->where(array('idt_transaksi' => $idt_transaksi ));

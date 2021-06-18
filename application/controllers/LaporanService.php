@@ -26,9 +26,6 @@ class LaporanService extends CI_Controller {
 		 $data['result'] = $this->model->get_data(); // 
 		$this->load->view('admin/laporanservice',$data); //past the data to the view
 	}
-			
-			
-			//$this->load->view('master/viewlaporanpembelisayur', $data);
 	
 
 }

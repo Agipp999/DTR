@@ -47,15 +47,17 @@
                                   <td>".$u->noKendaraan."</td>
                                   <td>
                                   <a href ='#' class='on-default edit-row btn btn-primary'
-                                    data-toggle='modal' data-target='#custom-width-modal' 
-                                    onClick=\"SetInput('".$u->idt_transaksi."','".$u->tanggalTransaksi."','".$u->namaPenyewa."',
+                                  data-toggle='modal' data-target='#custom-width-modal' 
+                                  onClick=\"SetInput('".$u->idt_transaksi."','".$u->tanggalTransaksi."','".$u->namaPenyewa."',
                                     '".$u->lamaSewa."','".$u->totalHarga."','".$u->statusPembayaran."','".$u->keteranganSewa."','".$u->alamatPenyewa."',
-                                    '".$u->telponPenyewa."','".$u->idt_armada."','".$u->idt_armada."')\" class='col-sm-6 col-md-4 col-lg-3'><i class='fas fa-pen'></i></a>
-                                  <a href ='#' class='on-default default-row btn btn-danger'
-                                    data-toggle='modal' data-target='#delete-modal' 
-                                    onClick=\"setInput1('".$u->idt_transaksi."','".$u->tanggalTransaksi."','".$u->namaPenyewa."',
+                                    '".$u->telponPenyewa."','".$u->idt_armada."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                    <i class='fas fa-pen'></i></a>
+                                <a href ='#' class='on-default default-row btn btn-danger'
+                                  data-toggle='modal' data-target='#delete-modal' 
+                                  onClick=\"setInput1('".$u->idt_transaksi."','".$u->tanggalTransaksi."','".$u->namaPenyewa."',
                                     '".$u->lamaSewa."','".$u->totalHarga."','".$u->statusPembayaran."','".$u->keteranganSewa."','".$u->alamatPenyewa."',
-                                    '".$u->telponPenyewa."','".$u->idt_armada."','".$u->idt_armada."')\"class='col-sm-6 col-md-4 col-lg-3'><i class='fas fa-trash'></i></a>
+                                    '".$u->telponPenyewa."','".$u->idt_armada."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                    <i class='fas fa-trash'></i></a>
                                 </tr>";
                             $no++;
                           }
@@ -224,7 +226,7 @@
               </div>
 
           <script type="text/javascript">
-                function SetInput(idt_transaksi, idt_armada, tanggalTransaksi, namaPenyewa, lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa,  noKendaraan) {
+                function SetInput(idt_transaksi, tanggalTransaksi, namaPenyewa, lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa) {
                     document.getElementById('idt_transaksi').value = idt_transaksi;
                     document.getElementById('tanggalTransaksi').value = tanggalTransaksi;
                     document.getElementById('namaPenyewa').value = namaPenyewa;
@@ -234,10 +236,8 @@
                     document.getElementById('keteranganSewa').value = keteranganSewa;
                     document.getElementById('alamatPenyewa').value = alamatPenyewa;
                     document.getElementById('telponPenyewa').value = telponPenyewa;
-                    document.getElementById('namaArmada').value = namaArmada;
-                    document.getElementById('noKendaraan').value = noKendaraan;
                 }
-                function setInput1(idt_transaksi,idt_armada, tanggalTransaksi, namaPenyewa,  lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa, namaArmada, noKendaraan) {
+                function setInput1(idt_transaksi, tanggalTransaksi, namaPenyewa,  lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa) {
                     document.getElementById('idt_transaksi1').value = idt_transaksi;
                     document.getElementById('tanggalTransaksi1').value = tanggalTransaksi;
                     document.getElementById('namaPenyewa1').value = namaPenyewa;
@@ -247,10 +247,8 @@
                     document.getElementById('keteranganSewa1').value = keteranganSewa;
                     document.getElementById('alamatPenyewa1').value = alamatPenyewa;
                     document.getElementById('telponPenyewa1').value = telponPenyewa;
-                    document.getElementById('namaArmada1').value = namaArmada;
-                    document.getElementById('noKendaraan1').value = noKendaraan;
                 }
-                function ResetInput(idt_transaksi,idt_armada, tanggalTransaksi, namaPenyewa,  lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa, namaArmada, noKendaraan) {
+                function ResetInput(idt_transaksi, tanggalTransaksi, namaPenyewa,  lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa) {
                     document.getElementById('idt_transaksi').value = "";
                     document.getElementById('tanggalTransaksi').value = "";
                     document.getElementById('namaPenyewa').value = "";
@@ -260,7 +258,5 @@
                     document.getElementById('keteranganSewa').value = "";
                     document.getElementById('alamatPenyewa').value = "";
                     document.getElementById('telponPenyewa').value = "";
-                    document.getElementById('namaArmada').value = "";
-                    document.getElementById('noKendaraan').value = "";
                 }
              </script>

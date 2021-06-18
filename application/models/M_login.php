@@ -23,6 +23,6 @@ class M_login extends CI_Model
 			}
 		}
 		echo $this->session->set_flashdata('msg','Username Atau password Salah');
-		redirect(base_url());
+		redirect('login');
 	}
 }
