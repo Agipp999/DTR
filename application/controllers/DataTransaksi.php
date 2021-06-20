@@ -8,6 +8,8 @@ class DataTransaksi extends CI_Controller {
                 parent::__construct();
 		$this->load->model('M_datatransaksi');
 		$this->load->model('M_dataarmada');
+		$this->load->model('M_penyewa');
+		$this->load->model('M_pegawai');
                 $this->load->helper('url');
         }
 	public function index(){

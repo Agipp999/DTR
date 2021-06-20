@@ -2,6 +2,7 @@
 
 class M_laporanservice extends CI_Model{
 	function tampil_data(){
+    
 		$tanggalAwal = date('d-m-y 00:00:00', strtotime($this->input->post('start')));
     $tanggalAkhir = date('d-m-y 00:00:00', strtotime($this->input->post('end')));
     $this->db->select('*');

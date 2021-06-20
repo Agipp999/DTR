@@ -3,13 +3,11 @@
 class M_datasopir extends CI_Model{
 	function tampil_data()
 	{
-		return $this->db->get('t_sopir');
+		return $this->db->query("SELECT * from t_sopir, t_pegawai where t_sopir.idt_pegawai=t_pegawai.idt_pegawai");
     }
     function tambah_data(){
 		$data = array(
-			'namaSopir' => $this->input->post('namaSopir'),
-			'alamat' => $this->input->post('alamat'),
-			'noTelfon' => $this->input->post('noTelfon'),
+			'idt_pegawai' => $this->input->post('idt_pegawai'),
 		);
 	$this->db->insert('t_sopir', $data);
 	redirect('../DataSopir');	
@@ -17,9 +15,7 @@ class M_datasopir extends CI_Model{
 	
 	function ubah_data ($idt_sopir){
 		$data = array(
-			'namaSopir' => $this->input->post('namaSopir'),
-			'alamat' => $this->input->post('alamat'),
-			'noTelfon' => $this->input->post('noTelfon'),
+			'idt_pegawai' => $this->input->post('idt_pegawai'),
 		);
 	$this->db->where(array('idt_sopir' => $idt_sopir));
 	$this->db->update('t_sopir', $data);

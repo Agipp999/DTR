@@ -67,12 +67,14 @@
 								<li><a class="nav-link" href="<?php echo base_url('DataArmada'); ?>">Data Armada</a></li>
 								<li><a class="nav-link" href="<?php echo base_url('ServiceBerkala'); ?>">Service Berkala</a></li>
 							</ul>
+						</li><li class="dropdown">
+							<a href="<?php echo base_url('DataPenyewa'); ?>" class="nav-linkn"><i data-feather="user"></i><span>Data Penyewa</span></a>
 						</li>
 						<li class="dropdown">
 							<a href="<?php echo base_url('DataTransaksi'); ?>" class="nav-link"><i data-feather="command"></i><span>Data Transaksi</span></a>
 						</li>
 						<li class="dropdown">
-							<a href="<?php echo base_url('DataSopir'); ?>" class="nav-linkn"><i data-feather="mail"></i><span>Data Sopir</span></a>
+							<a href="<?php echo base_url('DataSopir'); ?>" class="nav-linkn"><i data-feather="user"></i><span>Data Sopir</span></a>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Laporan</span></a>

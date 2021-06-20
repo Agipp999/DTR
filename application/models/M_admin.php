@@ -3,14 +3,13 @@
 class M_admin extends CI_Model{
 	function tampil_data()
 	{
-		return $this->db->get('t_admin');
+		return $this->db->query("SELECT * from t_admin, t_pegawai where t_admin.idt_pegawai=t_pegawai.idt_pegawai");
     }
    function tambah_data() {
 
 		$data = array(
-		    'namaAdmin' => $this->input->post('namaAdmin'),
-            'noTelfon' => $this->input->post('noTelfon'),
-			'username' => $this->input->post('username'),
+			'idt_pegawai' => $this->input->post('idt_pegawai'),
+		    'username' => $this->input->post('username'),
 			'password_2' => MD5($this->input->post('password_2')),
 			'level' => $this->input->post('level')
 			);
@@ -21,9 +20,8 @@ class M_admin extends CI_Model{
     function ubah_data ($idt_admin) {
  
 		$data = array(
-            'namaAdmin' => $this->input->post('namaAdmin'),
-            'noTelfon' => $this->input->post('noTelfon'),
-			'username' => $this->input->post('username'),
+			'idt_pegawai' => $this->input->post('idt_pegawai'),
+            'username' => $this->input->post('username'),
 			'password_2' => MD5($this->input->post('password_2')),
 			'level' => $this->input->post('level')
 			);

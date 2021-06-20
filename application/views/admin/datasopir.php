@@ -28,18 +28,16 @@
                           foreach ($t_sopir->result() as $u) {
                           echo"<tr>
                                   <td>".$no."</td>
-                                  <td>".$u->namaSopir."</td>
-                                  <td>".$u->alamat."</td>
+                                  <td>".$u->namaPegawai."</td>
+                                  <td>".$u->alamatPegawai."</td>
                                   <td>".$u->noTelfon."</td>
                                   <td>
                                   <a href ='#' class='on-default edit-row btn btn-primary'
                                     data-toggle='modal' data-target='#custom-width-modal' 
-                                    onClick=\"SetInput('".$u->idt_sopir."','".$u->namaSopir."','".$u->alamat."',
-                                    '".$u->noTelfon."')\" class='col-sm-6 col-md-4 col-lg-3'><i class='fas fa-pen'></i></a>
+                                    onClick=\"SetInput('".$u->idt_sopir."')\" class='col-sm-6 col-md-4 col-lg-3'><i class='fas fa-pen'></i></a>
                                   <a href ='#' class='on-default default-row btn btn-danger'
                                     data-toggle='modal' data-target='#delete-modal' 
-                                    onClick=\"setInput1('".$u->idt_sopir."','".$u->namaSopir."','".$u->alamat."',
-                                    '".$u->noTelfon."')\"class='col-sm-6 col-md-4 col-lg-3'><i class='fas fa-trash'></i></a>
+                                    onClick=\"setInput1('".$u->idt_sopir."')\"class='col-sm-6 col-md-4 col-lg-3'><i class='fas fa-trash'></i></a>
                                 </tr>";
                             $no++;
                           }
@@ -68,7 +66,15 @@
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Nama sopir</label>
                                     <input type="hidden" id="idt_sopir" name="idt_sopir">
-                                    <input type="text" class="form-control" id="namaSopir" name="namaSopir" required>
+                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_pegawai" name="idt_pegawai" required>
+                                            <option value=""></option>
+                                                <?php
+                                                $t_pegawai = $this->M_pegawai->tampil_data();
+                                                foreach ($t_pegawai->result() as $u) { 
+                                                    echo "<option value='".$u->idt_pegawai."'>".$u->namaPegawai."</option>";
+                                                }
+                                            ?>
+                                        </select>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +82,15 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-3" class="control-label">Alamat</label>
-                                    <input type="text" class="form-control" id="alamat" name="alamat" required >
+                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_pegawai" name="idt_pegawai" required>
+                                            <option value=""></option>
+                                                <?php
+                                                $t_pegawai = $this->M_pegawai->tampil_data();
+                                                foreach ($t_pegawai->result() as $u) { 
+                                                    echo "<option value='".$u->idt_pegawai."'>".$u->alamatPegawai."</option>";
+                                                }
+                                            ?>
+                                        </select>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +98,15 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-3" class="control-label">Nomor Telepon</label>
-                                    <input type="text" class="form-control" id="noTelfon" name="noTelfon" required >
+                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_pegawai" name="idt_pegawai" required>
+                                            <option value=""></option>
+                                                <?php
+                                                $t_pegawai = $this->M_pegawai->tampil_data();
+                                                foreach ($t_pegawai->result() as $u) { 
+                                                    echo "<option value='".$u->idt_pegawai."'>".$u->noTelfon."</option>";
+                                                }
+                                            ?>
+                                        </select>
                                 </div>
                             </div>
                         </div>
@@ -126,22 +148,13 @@
                   </div>
               </div>
           <script type="text/javascript">
-                function SetInput(idt_sopir, namaSopir, alamat, noTelfon) {
+                function SetInput(idt_sopir) {
                     document.getElementById('idt_sopir').value = idt_sopir;
-                    document.getElementById('namaSopir').value = namaSopir;
-                    document.getElementById('alamat').value = alamat;
-                    document.getElementById('noTelfon').value = noTelfon;
                 }
-                function setInput1(idt_sopir, namaSopir, alamat, noTelfon) {
+                function setInput1(idt_sopir) {
                     document.getElementById('idt_sopir1').value = idt_sopir;
-                    document.getElementById('namaSopir1').value = namaSopir;
-                    document.getElementById('alamat1').value = alamat;
-                    document.getElementById('noTelfon1').value = noTelfon;
                 }
-                function ResetInput(idt_sopir, namaSopir, alamat, noTelfon) {
+                function ResetInput(idt_sopir) {
                     document.getElementById('idt_sopir').value = "";
-                    document.getElementById('namaSopir').value = "";
-                    document.getElementById('alamat').value = "";
-                    document.getElementById('noTelfon').value = "";
                 }
               </script>

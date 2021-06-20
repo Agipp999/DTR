@@ -7,6 +7,7 @@ class LaporanTransaksi extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('M_laporantransaksi');
+				$this->load->model('M_datatransaksi');
                 $this->load->helper('url');
         }
 	public function index()	{

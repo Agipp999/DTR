@@ -16,47 +16,47 @@
                         <thead>
                           <tr>
                           <th class="text-center">No</th>
-                            <th>Tanggal Transaksi</th>
+                            <th>Mulai Sewa</th>
                             <th>Nama Penyewa</th>
-                            <th>Lama Penyewaan</th>
+                            <th>Selesai Sewa</th>
                             <th>Total Harga</th>
                             <th>Status Pembayaran</th>
                             <th>Keterangan Sewa</th>
                             <th>Alamat Penyewa</th>
                             <th>Telepon Penyewa</th>
                             <th>Nama Armada</th>
-                            <th>Nomor Kendaraan</th>
+                            <th>Nama Sopir</th>
+                            <th>Rute Perjalanan</th>
                             <th>Aksi</th>
                           </tr>
                         </thead>
                         <tbody>
                         <?php
                           $no = 1;
-                          foreach ($t_transaksi->result() as $u) {
+                          foreach ($t_transaksi as $u) {
                           echo"<tr>
                                   <td>".$no."</td>
                                   <td>".$u->tanggalTransaksi."</td>
                                   <td>".$u->namaPenyewa."</td>
-                                  <td>".$u->lamaSewa."</td>
+                                  <td>".$u->selesaiSewa."</td>
                                   <td>".$u->totalHarga."</td>
                                   <td>".$u->statusPembayaran."</td>
                                   <td>".$u->keteranganSewa."</td>
                                   <td>".$u->alamatPenyewa."</td>
-                                  <td>".$u->telponPenyewa."</td>
+                                  <td>".$u->noTelfon."</td>
                                   <td>".$u->namaArmada."</td>
-                                  <td>".$u->noKendaraan."</td>
+                                  <td>".$u->namaPegawai."</td>
+                                  <td>".$u->perjalanan."</td>
                                   <td>
                                   <a href ='#' class='on-default edit-row btn btn-primary'
                                   data-toggle='modal' data-target='#custom-width-modal' 
-                                  onClick=\"SetInput('".$u->idt_transaksi."','".$u->tanggalTransaksi."','".$u->namaPenyewa."',
-                                    '".$u->lamaSewa."','".$u->totalHarga."','".$u->statusPembayaran."','".$u->keteranganSewa."','".$u->alamatPenyewa."',
-                                    '".$u->telponPenyewa."','".$u->idt_armada."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                  onClick=\"SetInput('".$u->idt_transaksi."','".$u->tanggalTransaksi."',
+                                    '".$u->selesaiSewa."','".$u->totalHarga."','".$u->statusPembayaran."','".$u->keteranganSewa."','".$u->perjalanan."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-pen'></i></a>
                                 <a href ='#' class='on-default default-row btn btn-danger'
                                   data-toggle='modal' data-target='#delete-modal' 
-                                  onClick=\"setInput1('".$u->idt_transaksi."','".$u->tanggalTransaksi."','".$u->namaPenyewa."',
-                                    '".$u->lamaSewa."','".$u->totalHarga."','".$u->statusPembayaran."','".$u->keteranganSewa."','".$u->alamatPenyewa."',
-                                    '".$u->telponPenyewa."','".$u->idt_armada."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                  onClick=\"setInput1('".$u->idt_transaksi."','".$u->tanggalTransaksi."',
+                                    '".$u->selesaiSewa."','".$u->totalHarga."','".$u->statusPembayaran."','".$u->keteranganSewa."','".$u->perjalanan."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-trash'></i></a>
                                 </tr>";
                             $no++;
@@ -94,15 +94,23 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-3" class="control-label">Nama Penyewa</label>
-                                    <input type="text" class="form-control" id="namaPenyewa" name="namaPenyewa" required >
+                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_penyewa" name="idt_penyewa"  required >
+                                        <option value=""></option>
+                                            <?php
+                                            $t_penyewa = $this->M_penyewa->tampil_data();
+                                             foreach ($t_penyewa->result() as $u) { 
+                                                echo "<option value='".$u->idt_penyewa."'>".$u->namaPenyewa."</option>";
+                                             }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-3" class="control-label">Lama Sewa</label>
-                                    <input type="text" class="form-control" id="lamaSewa" name="lamaSewa" required >
+                                    <label for="field-3" class="control-label">Selesai Sewa</label>
+                                    <input type="date" class="form-control" value="<?php echo date('d-m-Y'); ?>" id="selesaiSewa" name="selesaiSewa" required >
                                 </div>
                             </div>
                         </div>
@@ -143,15 +151,31 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-3" class="control-label">Alamat Penyewa</label>
-                                    <input type="text" class="form-control" id="alamatPenyewa" name="alamatPenyewa" required >
+                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_penyewa" name="idt_penyewa"  required >
+                                        <option value=""></option>
+                                            <?php
+                                            $t_penyewa = $this->M_penyewa->tampil_data();
+                                             foreach ($t_penyewa->result() as $u) { 
+                                                echo "<option value='".$u->idt_penyewa."'>".$u->alamatPenyewa."</option>";
+                                             }
+                                        ?>
+                                        </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-3" class="control-label">telpon Penyewa</label>
-                                    <input type="text" class="form-control" id="telponPenyewa" name="telponPenyewa" required >
+                                    <label for="field-3" class="control-label">Telpon Penyewa</label>
+                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_penyewa" name="idt_penyewa"  required >
+                                        <option value=""></option>
+                                            <?php
+                                            $t_penyewa = $this->M_penyewa->tampil_data();
+                                             foreach ($t_penyewa->result() as $u) { 
+                                                echo "<option value='".$u->idt_penyewa."'>".$u->noTelfon."</option>";
+                                             }
+                                        ?>
+                                        </select>
                                 </div>
                             </div>
                         </div>
@@ -174,16 +198,24 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-3" class="control-label">Nomor Kendaraan</label>
-                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_armada" name="idt_armada"  required >
-                                        <option value=""></option>
-                                            <?php
-                                            $t_armada = $this->M_dataarmada->tampil_data();
-                                             foreach ($t_armada->result() as $u) { 
-                                                echo "<option value='".$u->idt_armada."'>".$u->noKendaraan."</option>";
-                                             }
-                                        ?>
+                                    <label for="field-1" class="control-label">Nama sopir</label>
+                                    <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_pegawai" name="idt_pegawai" required>
+                                            <option value=""></option>
+                                                <?php
+                                                $t_pegawai = $this->M_pegawai->tampil_data();
+                                                foreach ($t_pegawai->result() as $u) { 
+                                                    echo "<option value='".$u->idt_pegawai."'>".$u->namaPegawai."</option>";
+                                                }
+                                            ?>
                                         </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-3" class="control-label">Rute Perjalanan</label>
+                                    <input type="text" class="form-control" id="perjalanan" name="perjalanan" required >
                                 </div>
                             </div>
                         </div>
@@ -226,37 +258,28 @@
               </div>
 
           <script type="text/javascript">
-                function SetInput(idt_transaksi, tanggalTransaksi, namaPenyewa, lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa) {
+                function SetInput(idt_transaksi, tanggalTransaksi, selesaiSewa, totalHarga, statusPembayaran, keteranganSewa,) {
                     document.getElementById('idt_transaksi').value = idt_transaksi;
                     document.getElementById('tanggalTransaksi').value = tanggalTransaksi;
-                    document.getElementById('namaPenyewa').value = namaPenyewa;
-                    document.getElementById('lamaSewa').value = lamaSewa;
+                    document.getElementById('selesaiSewa').value = selesaiSewa;
                     document.getElementById('totalHarga').value = totalHarga;
                     document.getElementById('statusPembayaran').value = statusPembayaran;
                     document.getElementById('keteranganSewa').value = keteranganSewa;
-                    document.getElementById('alamatPenyewa').value = alamatPenyewa;
-                    document.getElementById('telponPenyewa').value = telponPenyewa;
                 }
-                function setInput1(idt_transaksi, tanggalTransaksi, namaPenyewa,  lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa) {
+                function setInput1(idt_transaksi, tanggalTransaksi, selesaiSewa, totalHarga, statusPembayaran, keteranganSewa) {
                     document.getElementById('idt_transaksi1').value = idt_transaksi;
                     document.getElementById('tanggalTransaksi1').value = tanggalTransaksi;
-                    document.getElementById('namaPenyewa1').value = namaPenyewa;
-                    document.getElementById('lamaSewa1').value = lamaSewa;
+                    document.getElementById('selesaiSewa1').value = selesaiSewa;
                     document.getElementById('totalHarga1').value = totalHarga;
                     document.getElementById('statusPembayaran1').value = statusPembayaran;
                     document.getElementById('keteranganSewa1').value = keteranganSewa;
-                    document.getElementById('alamatPenyewa1').value = alamatPenyewa;
-                    document.getElementById('telponPenyewa1').value = telponPenyewa;
                 }
-                function ResetInput(idt_transaksi, tanggalTransaksi, namaPenyewa,  lamaSewa, totalHarga, statusPembayaran, keteranganSewa, alamatPenyewa, telponPenyewa) {
+                function ResetInput(idt_transaksi, tanggalTransaksi, selesaiSewa, totalHarga, statusPembayaran, keteranganSewa) {
                     document.getElementById('idt_transaksi').value = "";
                     document.getElementById('tanggalTransaksi').value = "";
-                    document.getElementById('namaPenyewa').value = "";
-                    document.getElementById('lamaSewa').value = "";
+                    document.getElementById('selesaiSewa').value = "";
                     document.getElementById('totalHarga').value = "";
                     document.getElementById('statusPembayaran').value = "";
                     document.getElementById('keteranganSewa').value = "";
-                    document.getElementById('alamatPenyewa').value = "";
-                    document.getElementById('telponPenyewa').value = "";
                 }
              </script>

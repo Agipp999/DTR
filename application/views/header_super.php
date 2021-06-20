@@ -61,7 +61,12 @@
 							<a href="<?php echo base_url('WelcomeSuperAdmin'); ?>" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
 						</li>
 						<li class="dropdown">
-							<a href="<?php echo base_url('AdminAdmin'); ?>" class="nav-link"><i data-feather="command"></i><span>Data Admin</span></a>
+							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="user"></i><span>Data Pegawai</span></a>
+							<ul class="dropdown-menu">
+								<li><a class="nav-link" href="<?php echo base_url('DataPegawai'); ?>">Data Pegawai</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('DataSopir'); ?>">Data Sopir</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('AdminAdmin'); ?>">Data Admin</a></li>
+							</ul>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Laporan</span></a>

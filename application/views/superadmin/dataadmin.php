@@ -30,7 +30,7 @@
                           foreach ($t_admin->result() as $u) {
                           echo"<tr>
                                   <td>".$no."</td>
-                                  <td>".$u->namaAdmin."</td>
+                                  <td>".$u->namaPegawai."</td>
                                   <td>".$u->noTelfon."</td>
                                   <td>".$u->username."</td>
                                   <td>".$u->password_2."</td>
@@ -38,12 +38,12 @@
                                   <td>
                                   <a href ='#' class='on-default edit-row btn btn-primary'
                                     data-toggle='modal' data-target='#custom-width-modal' 
-                                    onClick=\"SetInput('".$u->idt_admin."','".$u->namaAdmin."','".$u->noTelfon."',
+                                    onClick=\"SetInput('".$u->idt_admin."',
                                   '".$u->username."','".$u->password_2."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-pen'></i></a>
                                     <a href ='#' class='on-default default-row btn btn-danger'
                                     data-toggle='modal' data-target='#delete-modal' 
-                                    onClick=\"setInput1('".$u->idt_admin."','".$u->namaAdmin."','".$u->noTelfon."',
+                                    onClick=\"setInput1('".$u->idt_admin."',
                                   '".$u->username."','".$u->password_2."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-trash'></i></a>
                                 </tr>";
@@ -73,16 +73,31 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-1" class="control-label">Nama Admin</label>
-                                    <input type="hidden" id="idt_admin" name="idt_admin">
-                                    <input type="text" class="form-control" id="namaAdmin" name="namaAdmin" required>
+                                        <input type="hidden" id="idt_admin" name="idt_admin">
+                                        <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_pegawai" name="idt_pegawai" required>
+                                            <option value=""></option>
+                                                <?php
+                                                $t_pegawai = $this->M_pegawai->tampil_data();
+                                                foreach ($t_pegawai->result() as $u) { 
+                                                    echo "<option value='".$u->idt_pegawai."'>".$u->namaPegawai."</option>";
+                                                }
+                                            ?>
+                                        </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="field-3" class="control-label">Nomor Telepon</label>
-                                    <input type="text" class="form-control" id="noTelfon" name="noTelfon" required >
+                                        <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_pegawai" name="idt_pegawai" required>
+                                            <option value=""></option>
+                                                <?php
+                                                $t_pegawai = $this->M_pegawai->tampil_data();
+                                                foreach ($t_pegawai->result() as $u) { 
+                                                    echo "<option value='".$u->idt_pegawai."'>".$u->noTelfon."</option>";
+                                                }
+                                            ?>
+                                        </select>
                                 </div>
                             </div>
                         </div>
@@ -152,26 +167,20 @@
               </div>
 
           <script type="text/javascript">
-                function SetInput(idt_admin, namaAdmin, noTelfon, username, password_2, level) {
+                function SetInput(idt_admin, username, password_2, level) {
                     document.getElementById('idt_admin').value = idt_admin;
-                    document.getElementById('namaAdmin').value = namaAdmin;
-                    document.getElementById('noTelfon').value = noTelfon;
                     document.getElementById('username').value = username;
                     document.getElementById('password_2').value = password_2;
                     document.getElementById('level').value = level;
                 }
-                function setInput1(idt_admin, namaAdmin, noTelfon, username, password_2, level) {
+                function setInput1(idt_admin, username, password_2, level) {
                     document.getElementById('idt_admin1').value = idt_admin;
-                    document.getElementById('namaAdmin1').value = namaAdmin;
-                    document.getElementById('noTelfon1').value = noTelfon;
                     document.getElementById('username1').value = username;
                     document.getElementById('password_21').value = password_2;
                     document.getElementById('level1').value = level;
                 }
-                function ResetInput(idt_admin, namaAdmin, noTelfon, username, password_2, level) {
+                function ResetInput(idt_admin, username, password_2, level) {
                     document.getElementById('idt_admin').value = "";
-                    document.getElementById('namaAdmin').value = "";
-                    document.getElementById('noTelfon').value = "";
                     document.getElementById('username').value = "";
                     document.getElementById('password_2').value = "";
                     document.getElementById('level').value = "";

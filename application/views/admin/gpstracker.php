@@ -20,7 +20,7 @@
           </div>
         </section>
     <script>
-    document.getElementById("mapid").onmouseout = function() { 
+    document.getElementById('mapid').onmouseout = function() { 
       setTimeout(location.reload.bind(location), 60000);
     }
     navigator.geolocation.getCurrentPosition(function(location){
@@ -41,8 +41,6 @@
             .addTo(mymap)
             .bindPopup("<b>Lokasi Terkini</b><br>"+
                         "Nama Armada : <?= $value->name?> <br>"+
-                        "Latitude : <?= $value->latitude?> <br>"+
-                        "Longitude : <?=$value->longitude?> <br>"+
                         "<a href='https://www.google.com/maps/dir/?api=1&origin="  + 
                         location.coords.latitude + "," + location.coords.longitude + "&destination=<?= $value->latitude ?>,<?= $value->longitude?>  'class='btn btn-sm btn-primary' target='_blank'>Tracking</a>"
                         +

@@ -5,7 +5,7 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Laporan Transaksi</h4>
+                    <h4>Laporan Service</h4>
                   </div>
                   <div class="card-body">
             <div class="col-sm-12">
@@ -16,10 +16,10 @@
                     <div class="form-group">
                         <label class="control-label col-sm-4">Date Range</label>
                         <div class="col-sm-8">
-                            <div class="input-daterange input-group" id="tanggal">
-                                <input type="date" class="form-control" value="<?php echo date('d-m-y'); ?>" name="start" />
+                            <div class="input-daterange input-group">
+                                <input type="date" class="form-control"  id="start" name="start" />
                                 <span class="input-group-addon bg-custom b-0 text-white">to</span>
-                                <input type="date" class="form-control" value="<?php echo date('d-m-y'); ?>" name="end" />
+                                <input type="date" class="form-control" id="end" name="end" />
                             </div>
                         </div>
                     </div>

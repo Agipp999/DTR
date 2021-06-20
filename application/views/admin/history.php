@@ -20,8 +20,8 @@
           </div>
         </section>
     <script>
-    document.getElementById("mapid").onmouseout = function() { 
-      setTimeout(location.reload.bind(location), 60000);
+    document.getElementById('mapid').onmouseout = function() { 
+      setTimeout(location.reload.reload(location), 60000);
     }
     navigator.geolocation.getCurrentPosition(function(location){
      var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
@@ -38,7 +38,11 @@
         <?php 
         foreach ($gps->result() as $key => $value) { ?>
             L.marker([<?= $value->latitude ?>,<?= $value->longitude ?>])
-            .addTo(mymap);
+            .addTo(mymap)
+            .bindPopup("<b>Lokasi Terkini</b><br>"+
+                        "Nama Armada : <?= $value->name?> <br>"+
+                        "Latitude : <?= $value->latitude?> <br>"+
+                        "Longitude : <?=$value->longitude?> <br>").openPopup();
         <?php } ?>
 
 

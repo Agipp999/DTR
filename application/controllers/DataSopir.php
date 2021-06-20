@@ -7,6 +7,7 @@ class DataSopir extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('M_datasopir');
+				$this->load->model('M_pegawai');
                 $this->load->helper('url');
         }
 	public function index()	{
@@ -17,6 +18,13 @@ class DataSopir extends CI_Controller {
 				$this->load->view('header', $data);
 				$this->load->view('admin/datasopir', $data);
 				$this->load->view('footer', $data);
+		} elseif($this->session->userdata('akses')=='2'){
+            $data['query'] = $this->M_datasopir->tampil_data();
+	    	$data['t_sopir'] = $this->M_datasopir->tampil_data();
+	
+				$this->load->view('header_super', $data);
+				$this->load->view('admin/datasopir', $data);
+				$this->load->view('footer_super', $data);
 		}else{
 			echo "Halaman Tidak ditemukan";
 		}   
