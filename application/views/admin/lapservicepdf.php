@@ -39,12 +39,7 @@
 
 <body>
             <center><b><font size="5" face="arial">Duta Ryana Tour and Travel</font><b></center>
-            <center><b><font size="4" face="Courier New">LAPORAN SERVICE</font></b></center>
-            <center><b><?php
-            $tanggalAwal = date('d-m-y', strtotime($_POST['start']));
-            $tanggalAkhir = date('d-m-y', strtotime($_POST['end']));
-            echo "Periode ".$tanggalAwal." sampai ".$tanggalAkhir."</br>";
-            ?><b></center>     
+            <center><b><font size="4" face="Courier New">LAPORAN SERVICE</font></b></center>   
             <center><b> Jln. Raya Surabaya-Madiun, Sumberbening - Balerejo, Madiun <b></center>
             <hr><width="100" height="75"></hr>       
     <table style="width=100%;" border="1" align="center">

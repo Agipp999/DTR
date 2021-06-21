@@ -8,12 +8,15 @@ class LaporanTransaksi extends CI_Controller {
                 parent::__construct();
                 $this->load->model('M_laporantransaksi');
 				$this->load->model('M_datatransaksi');
+				$this->load->model('M_dataarmada');
+				$this->load->model('M_penyewa');
+				$this->load->model('M_pegawai');
                 $this->load->helper('url');
         }
 	public function index()	{
 		if($this->session->userdata('akses')=='1'){
 		$data['query'] = $this->M_laporantransaksi->tampil_data();
-			$data['t_laporantransaksi'] = $this->M_laporantransaksi->tampil_data();
+			$data['t_transaksi'] = $this->M_laporantransaksi->tampil_data();
 
 			$this->load->view('header', $data);
 			$this->load->view('admin/laporantransaksi', $data);

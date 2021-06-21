@@ -7,12 +7,14 @@ class LaporanService extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('M_laporanservice');
+				$this->load->model('M_serviceberkala');
+				$this->load->model('M_dataarmada');
                 $this->load->helper('url');
         }
 	public function index()	{
 		if($this->session->userdata('akses')=='1'){
 		$data['query'] = $this->M_laporanservice->tampil_data();
-			$data['t_laporanservice'] = $this->M_laporanservice->tampil_data();
+			$data['t_service'] = $this->M_laporanservice->tampil_data();
 
 			$this->load->view('header', $data);
 			$this->load->view('admin/laporanservice', $data);
