@@ -9,6 +9,8 @@ class M_serviceberkala extends CI_Model{
 		$data = array(
 			'idt_armada' => $this->input->post('idt_armada'),
 			'tanggalService' => $this->input->post('tanggalService'),
+			'kmAwal' => $this->input->post('kmAwal'),
+			'kmAkhir' => $this->input->post('kmAkhir'),
 			'biayaService' => $this->input->post('biayaService'),
 			'keterangan' => $this->input->post('keterangan'),
 		);
@@ -20,6 +22,8 @@ class M_serviceberkala extends CI_Model{
 		$data = array(
 			'idt_armada' => $this->input->post('idt_armada'),
             'tanggalService' => $this->input->post('tanggalService'),
+			'kmAwal' => $this->input->post('kmAwal'),
+			'kmAkhir' => $this->input->post('kmAkhir'),
             'biayaService' => $this->input->post('biayaService'),
 			'keterangan' => $this->input->post('keterangan'),
 		);

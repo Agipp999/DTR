@@ -4,8 +4,8 @@ class M_login extends CI_Model
 	function auth()
 	{
 		$username = htmlspecialchars($this->input->post('username', TRUE), ENT_QUOTES);
-		$password_2 = htmlspecialchars($this->input->post('password_2', TRUE), ENT_QUOTES);
-		$query=$this->db->query("SELECT * FROM t_admin WHERE username='".$username."' AND password_2='".MD5($password_2)."'");
+		$password = htmlspecialchars($this->input->post('password', TRUE), ENT_QUOTES);
+		$query=$this->db->query("SELECT * FROM t_admin WHERE username='".$username."' AND password='".MD5($password)."'");
 		foreach ($query->result() as $row) {
 			// this->session->set_userdata('submit',TRUE);
 			$this->session->set_userdata('submit',TRUE);

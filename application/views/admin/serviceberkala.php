@@ -19,6 +19,8 @@
                             <th>Nama Armada</th>
                             <th>No Kendaraan</th>
                             <th>Terakhir Service</th>
+                            <th>Saat Service (Km)</th>
+                            <th>Akan service (Km)</th>
                             <th>Biaya Sevice</th>
                             <th>Keterangan</th>
                             <th>Aksi</th>
@@ -33,18 +35,20 @@
                                       <td>".$u->namaArmada."</td>
                                       <td>".$u->noKendaraan."</td>
                                       <td>".$u->tanggalService."</td>
+                                      <td>".$u->kmAwal."</td>
+                                      <td>".$u->kmAkhir."</td>
                                       <td>".$u->biayaService."</td>
                                       <td>".$u->keterangan."</td>
                                       <td>
                                       <a href ='#' class='on-default edit-row btn btn-primary'
                                     data-toggle='modal' data-target='#custom-width-modal' 
                                     onClick=\"SetInput('".$u->idt_service."',
-                                        '".$u->tanggalService."','".$u->biayaService."','".$u->keterangan."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                        '".$u->tanggalService."','".$u->kmAwal."','".$u->kmAkhir."','".$u->biayaService."','".$u->keterangan."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                         <i class='fas fa-pen'></i></a>
                                     <a href ='#' class='on-default default-row btn btn-danger'
                                       data-toggle='modal' data-target='#delete-modal' 
                                       onClick=\"setInput1('".$u->idt_service."',
-                                        '".$u->tanggalService."','".$u->biayaService."','".$u->keterangan."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                        '".$u->tanggalService."','".$u->kmAwal."','".$u->kmAkhir."','".$u->biayaService."','".$u->keterangan."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                         <i class='fas fa-trash'></i></a>
                                   </tr>";
                                 $no++;
@@ -113,6 +117,22 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
+                                    <label for="field-3" class="control-label">Saat Service (Km)</label>
+                                    <input type="text" class="form-control" id="kmAwal" name="kmAwal" required >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="field-3" class="control-label">Akan Service (Km)</label>
+                                    <input type="text" class="form-control" id="kmAkhir" name="kmAkhir" required >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
                                     <label for="field-3" class="control-label">Biaya Service</label>
                                     <input type="text" class="form-control" id="biayaService" name="biayaService" required >
                                 </div>
@@ -165,21 +185,27 @@
               </div>
 
           <script type="text/javascript">
-                function SetInput(idt_service, tanggalService, biayaService, keterangan) {
+                function SetInput(idt_service, tanggalService, kmAwal, kmAkhir, biayaService, keterangan) {
                     document.getElementById('idt_service').value = idt_service;
                     document.getElementById('tanggalService').value = tanggalService;
+                    document.getElementById('kmAwal').value = kmAwal;
+                    document.getElementById('kmAkhir').value = kmAkhir;
                     document.getElementById('biayaService').value = biayaService;
                     document.getElementById('keterangan').value = keterangan;
                 }
-                function setInput1(idt_service, tanggalService, biayaService, keterangan) {
+                function setInput1(idt_service, tanggalService, kmAwal, kmAkhir, biayaService, keterangan) {
                     document.getElementById('idt_service1').value = idt_service;
                     document.getElementById('tanggalService1').value = tanggalService;
+                    document.getElementById('kmAwal1').value = kmAwal;
+                    document.getElementById('kmAkhir1').value = kmAkhir;
                     document.getElementById('biayaService1').value = biayaService;
                     document.getElementById('keterangan1').value = keterangan;
                 }
-                function ResetInput(idt_service, tanggalService, biayaService, keterangan) {
+                function ResetInput(idt_service, tanggalService, kmAwal, kmAkhir, biayaService, keterangan) {
                     document.getElementById('idt_service').value = '';
                     document.getElementById('tanggalService').value = '';
+                    document.getElementById('kmAwal').value = '';
+                    document.getElementById('kmAkhir').value = '';
                     document.getElementById('biayaService').value = '';
                     document.getElementById('keterangan').value = '';
                 }
