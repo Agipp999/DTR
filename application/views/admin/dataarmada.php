@@ -22,6 +22,7 @@
 											<th>Tahun Kendaraan</th>
 											<th>Kapasitas Seat</th>
 											<th>Status Kendaraan </th>
+											<th>Username </th>
 											<th>Gambar</th>
 											<th>Aksi</th>
 										</tr>
@@ -37,17 +38,18 @@
                                   <td>" . $u->tahunKendaraan . "</td>
                                   <td>" . $u->kapasitasSeat . "</td>
                                   <td>" . $u->statusKendaraan . "</td>
+                                  <td>" . $u->username . "</td>
                                   <td><img  src=" . base_url('armada/') . $u->gambar .  " height=100; width=150;></td>
                                   <td>
                                   <a href ='#' class='on-default edit-row btn btn-primary'
                                     data-toggle='modal' data-target='#custom-width-modal' 
                                     onClick=\"SetInput('" . $u->idt_armada . "','" . $u->namaArmada . "','" . $u->noKendaraan . "',
-                                    '" . $u->tahunKendaraan . "','" . $u->kapasitasSeat . "','" . $u->statusKendaraan . "','" . base_url('armada/').$u->gambar . "')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                    '" . $u->tahunKendaraan . "','" . $u->kapasitasSeat . "','" . $u->statusKendaraan . "','" . $u->username . "','" . $u->password . "','" . base_url('armada/').$u->gambar . "')\" class='col-sm-6 col-md-4 col-lg-3'>
                                       <i class='fas fa-pen'></i></a>
                                   <a href ='#' class='on-default default-row btn btn-danger'
                                     data-toggle='modal' data-target='#delete-modal' 
                                     onClick=\"setInput1('" . $u->idt_armada . "','" . $u->namaArmada . "','" . $u->noKendaraan . "',
-                                    '" . $u->tahunKendaraan . "','" . $u->kapasitasSeat . "','" . $u->statusKendaraan . "','" . base_url('armada/').$u->gambar  . "')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                    '" . $u->tahunKendaraan . "','" . $u->kapasitasSeat . "','" . $u->statusKendaraan . "','" . $u->username . "','" . $u->password . "','" . base_url('armada/').$u->gambar  . "')\" class='col-sm-6 col-md-4 col-lg-3'>
                                       <i class='fas fa-trash'></i></a>
                                 </tr>";
 											$no++;
@@ -120,6 +122,22 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="form-group">
+								<label for="field-3" class="control-label">Username</label>
+								<input type="text" class="form-control" id="username" name="username" required>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="field-3" class="control-label">Password</label>
+								<input type="text" class="form-control" id="password" name="password" required>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
 								<label for="field-3" class="control-label">Gambar</label><br>
 								<img width="150px" height="150px" name="gambar" id="gambar">
 								<input type="file" name="filegambar" id="filegambar"  onchange="readURL(this);" required>
@@ -166,32 +184,38 @@
 </div>
 
 <script type="text/javascript">
-	function SetInput(idt_armada, namaArmada, noKendaraan, tahunKendaraan, kapasitasSeat, statusKendaraan, gambar) {
+	function SetInput(idt_armada, namaArmada, noKendaraan, tahunKendaraan, kapasitasSeat, statusKendaraan,  username, password, gambar) {
 		document.getElementById('idt_armada').value = idt_armada;
 		document.getElementById('namaArmada').value = namaArmada;
 		document.getElementById('noKendaraan').value = noKendaraan;
 		document.getElementById('tahunKendaraan').value = tahunKendaraan;
 		document.getElementById('kapasitasSeat').value = kapasitasSeat;
 		document.getElementById('statusKendaraan').value = statusKendaraan;
+		document.getElementById('username').value = username;
+		document.getElementById('password').value = password;
 		document.getElementById('gambar').src = gambar;
 	}
 
-	function setInput1(idt_armada, namaArmada, noKendaraan, tahunKendaraan, kapasitasSeat, statusKendaraan) {
+	function setInput1(idt_armada, namaArmada, noKendaraan, tahunKendaraan, kapasitasSeat, statusKendaraan,   username, password) {
 		document.getElementById('idt_armada1').value = idt_armada;
 		document.getElementById('namaArmada1').value = namaArmada;
 		document.getElementById('noKendaraan1').value = noKendaraan;
 		document.getElementById('tahunKendaraan1').value = tahunKendaraan;
 		document.getElementById('kapasitasSeat1').value = kapasitasSeat;
 		document.getElementById('statusKendaraan1').value = statusKendaraan;
+		document.getElementById('username1').value = username;
+		document.getElementById('password1').value = password;
 	}
 
-	function ResetInput(idt_armada, namaArmada, noKendaraan, tahunKendaraan, kapasitasSeat, statusKendaraan) {
+	function ResetInput(idt_armada, namaArmada, noKendaraan, tahunKendaraan, kapasitasSeat, statusKendaraan,   username, password) {
 		document.getElementById('idt_armada').value = "";
 		document.getElementById('namaArmada').value = "";
 		document.getElementById('noKendaraan').value = "";
 		document.getElementById('tahunKendaraan').value = "";
 		document.getElementById('kapasitasSeat').value = "";
 		document.getElementById('statusKendaraan').value = "";
+		document.getElementById('username').value = "";
+		document.getElementById('password').value = "";
 	}
 
 	function readURL(input) { //tambahan

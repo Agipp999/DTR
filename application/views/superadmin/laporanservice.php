@@ -8,29 +8,44 @@
                     <h4>Laporan Service</h4>
                   </div>
                   <div class="card-body">
-            <div class="col-sm-12">
-                <div class="card-box table-responsive">
-
-                    <br>
-                    <form action="<?php echo base_url('dompdfService');?>" target="_blank" method="post" class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label class="control-label col-sm-4">Date Range</label>
-                        <div class="col-sm-8">
-                            <div class="input-daterange input-group" id="tanggal">
-                                <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="start" />
-                                <span class="input-group-addon bg-custom b-0 text-white">to</span>
-                                <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="end" />
-                            </div>
+                    <div class="table-responsive">
+                    <form action="<?php echo base_url('DompdfService');?>" target="_blank" method="post" class="form-horizontal" role="form">
+                      <table class="table table-striped" id="table-1">
+                        <div class="float-right">
+                            <button type="submit" class="btn btn-success btn-sm" >Cetak Laporan</button>
                         </div>
+                        <thead>
+                          <tr>
+                          <th class="text-center">No</th>
+                          <th>Nama Armada</th>
+                            <th>No Kendaraan</th>
+                            <th>Terakhir Service</th>
+                            <th>Biaya Sevice</th>
+                            <th>Keterangan</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                          $no = 1;
+                          foreach ($t_service as $u) {
+                          echo"<tr>
+                                  <td>".$no."</td>
+                                  <td>".$u->namaArmada."</td>
+                                      <td>".$u->noKendaraan."</td>
+                                      <td>".$u->tanggalService."</td>
+                                      <td>".$u->biayaService."</td>
+                                      <td>".$u->keterangan."</td>
+                                </tr>";
+                            $no++;
+                          }
+                        ?>
+                        </tbody>
+                      </table>
                     </div>
-                    <div class="float-right">
-                        <button type="submit" class="btn btn-success btn-sm" >Cetak Laporan</button>
-                    </div>
-                </form>
-                    
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+        </section>
 </div>
-<!-- end row -->

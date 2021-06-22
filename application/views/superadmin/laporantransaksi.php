@@ -8,29 +8,57 @@
                     <h4>Laporan Transaksi</h4>
                   </div>
                   <div class="card-body">
-            <div class="col-sm-12">
-                <div class="card-box table-responsive">
-
-                    <br>
-                    <form action="<?php echo base_url('dompdfTransaksi');?>" target="_blank" method="post" class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label class="control-label col-sm-4">Date Range</label>
-                        <div class="col-sm-8">
-                            <div class="input-daterange input-group" id="tanggal">
-                                <input type="date" class="form-control" value="<?php echo date('d-m-y'); ?>" name="start" />
-                                <span class="input-group-addon bg-custom b-0 text-white">to</span>
-                                <input type="date" class="form-control" value="<?php echo date('d-m-y'); ?>" name="end" />
-                            </div>
+                    <div class="table-responsive">
+                    <form action="<?php echo base_url('DompdfTransaksi');?>" target="_blank" method="post" class="form-horizontal" role="form">
+                      <table class="table table-striped" id="table-1">
+                        <div class="float-right">
+                            <button type="submit" class="btn btn-success btn-sm" >Cetak Laporan</button>
                         </div>
+                        <thead>
+                          <tr>
+                          <th class="text-center">No</th>
+                            <th>Mulai Sewa</th>
+                            <th>Nama Penyewa</th>
+                            <th>Selesai Sewa</th>
+                            <th>Total Harga</th>
+                            <th>Status Pembayaran</th>
+                            <th>Keterangan Sewa</th>
+                            <th>Alamat Penyewa</th>
+                            <th>Telepon Penyewa</th>
+                            <th>Nama Armada</th>
+                            <th>Nama Sopir</th>
+                            <th>Rute Perjalanan</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                          $no = 1;
+                          foreach ($t_transaksi as $u) {
+                          echo"<tr>
+                                  <td>".$no."</td>
+                                  <td>".$u->tanggalTransaksi."</td>
+                                  <td>".$u->namaPenyewa."</td>
+                                  <td>".$u->selesaiSewa."</td>
+                                  <td>".$u->totalHarga."</td>
+                                  <td>".$u->statusPembayaran."</td>
+                                  <td>".$u->keteranganSewa."</td>
+                                  <td>".$u->alamatPenyewa."</td>
+                                  <td>".$u->noTelfon."</td>
+                                  <td>".$u->namaArmada."</td>
+                                  <td>".$u->namaPegawai."</td>
+                                  <td>".$u->perjalanan."</td>
+                                </tr>";
+                            $no++;
+                          }
+                        ?>
+                        </tbody>
+                      </table>
                     </div>
-                    <div class="float-right">
-                        <button type="submit" class="btn btn-success btn-sm" >Cetak Laporan</button>
-                    </div>
-                </form>
-                    
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+        </section>
 </div>
 <!-- end row -->

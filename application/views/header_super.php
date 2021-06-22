@@ -69,8 +69,8 @@
 						<li class="dropdown">
 							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Laporan</span></a>
 							<ul class="dropdown-menu">
-								<li><a class="nav-link" href="<?php echo base_url('AdminLaporanTransaksi'); ?>">Laporan Transaksi</a></li>
-								<li><a class="nav-link" href="<?php echo base_url('AdminLaporanService'); ?>">Laporan Service</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('LaporanTransaksi'); ?>">Laporan Transaksi</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('LaporanService'); ?>">Laporan Service</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">

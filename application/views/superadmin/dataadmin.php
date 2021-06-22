@@ -19,7 +19,6 @@
                             <th>Nama Admin</th>
                             <th>Nomer Telfon</th>
                             <th>Username</th>
-                            <th>Password</th>
                             <th>Level</th>
                             <th>Aksi</th>
                           </tr>
@@ -33,18 +32,17 @@
                                   <td>".$u->namaPegawai."</td>
                                   <td>".$u->noTelfon."</td>
                                   <td>".$u->username."</td>
-                                  <td>".$u->password_2."</td>
                                   <td>".$u->level."</td>
                                   <td>
                                   <a href ='#' class='on-default edit-row btn btn-primary'
                                     data-toggle='modal' data-target='#custom-width-modal' 
                                     onClick=\"SetInput('".$u->idt_admin."',
-                                  '".$u->username."','".$u->password_2."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                  '".$u->username."','".$u->password."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-pen'></i></a>
                                     <a href ='#' class='on-default default-row btn btn-danger'
                                     data-toggle='modal' data-target='#delete-modal' 
                                     onClick=\"setInput1('".$u->idt_admin."',
-                                  '".$u->username."','".$u->password_2."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
+                                  '".$u->username."','".$u->password."','".$u->level."')\" class='col-sm-6 col-md-4 col-lg-3'>
                                     <i class='fas fa-trash'></i></a>
                                 </tr>";
                             $no++;
@@ -89,6 +87,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
+                                        <label for="field-3" class="control-label">Nomor Telfon</label>
                                         <select class="form-control" data-live-search="true" data-style="btn-white" id="idt_pegawai" name="idt_pegawai" required>
                                             <option value=""></option>
                                                 <?php
@@ -113,7 +112,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="field-3" class="control-label">Password</label>
-                                    <input type="text" class="form-control" id="password_2" name="password_2" required >
+                                    <input type="text" class="form-control" id="password" name="password" required >
                                 </div>
                             </div>
                         </div>
@@ -167,22 +166,22 @@
               </div>
 
           <script type="text/javascript">
-                function SetInput(idt_admin, username, password_2, level) {
+                function SetInput(idt_admin, username, password, level) {
                     document.getElementById('idt_admin').value = idt_admin;
                     document.getElementById('username').value = username;
-                    document.getElementById('password_2').value = password_2;
+                    document.getElementById('password').value = password;
                     document.getElementById('level').value = level;
                 }
-                function setInput1(idt_admin, username, password_2, level) {
+                function setInput1(idt_admin, username, password, level) {
                     document.getElementById('idt_admin1').value = idt_admin;
                     document.getElementById('username1').value = username;
-                    document.getElementById('password_21').value = password_2;
+                    document.getElementById('password1').value = password;
                     document.getElementById('level1').value = level;
                 }
-                function ResetInput(idt_admin, username, password_2, level) {
+                function ResetInput(idt_admin, username, password, level) {
                     document.getElementById('idt_admin').value = "";
                     document.getElementById('username').value = "";
-                    document.getElementById('password_2').value = "";
+                    document.getElementById('password').value = "";
                     document.getElementById('level').value = "";
                 }
               </script>

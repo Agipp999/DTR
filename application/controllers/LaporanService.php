@@ -19,7 +19,15 @@ class LaporanService extends CI_Controller {
 			$this->load->view('header', $data);
 			$this->load->view('admin/laporanservice', $data);
 			$this->load->view('footer', $data);
-	    }else{
+	    }elseif($this->session->userdata('akses')=='2'){
+			$data['query'] = $this->M_laporanservice->tampil_data();
+			$data['t_service'] = $this->M_laporanservice->tampil_data();
+
+			$this->load->view('header_super', $data);
+			$this->load->view('superadmin/laporanservice', $data);
+			$this->load->view('footer_super', $data);
+		}else
+		{
 			echo "Halaman Tidak ditemukan";
 		}
 		}		

@@ -53,7 +53,7 @@
         </tr>
         <?php 
                     $no = 0;
-                    foreach($query->result()  as $u){
+                    foreach($query  as $u){
                         $no++;
                         echo "<tr>";
                             echo "<td><center>".$no."</center></td>";

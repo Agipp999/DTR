@@ -14,6 +14,8 @@ class M_dataarmada extends CI_Model
 			'tahunKendaraan' => $this->input->post('tahunKendaraan'),
 			'kapasitasSeat' => $this->input->post('kapasitasSeat'),
 			'statusKendaraan' => $this->input->post('statusKendaraan'),
+            'username' => $this->input->post('username'),
+			'password' => MD5($this->input->post('password')),
 			'gambar' =>  $filename
 		);
 		$this->db->insert('t_armada', $data);
@@ -29,6 +31,8 @@ class M_dataarmada extends CI_Model
 			'tahunKendaraan' => $this->input->post('tahunKendaraan'),
 			'kapasitasSeat' => $this->input->post('kapasitasSeat'),
 			'statusKendaraan' => $this->input->post('statusKendaraan'),
+            'username' => $this->input->post('username'),
+			'password' => MD5($this->input->post('password')),
 			'gambar' => $file_name
 		); 
 

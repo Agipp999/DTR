@@ -60,7 +60,7 @@
         </tr>
         <?php 
                     $no = 1;
-                    foreach($query->result()  as $u){
+                    foreach($query  as $u){
                         $no++;
                         echo "<tr>";
                             echo "<td><center>".$no."</center></td>";

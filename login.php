@@ -9,7 +9,7 @@ if($_POST){
     $response = []; //data response
 
     //username di dalam database
-    $userQuery = $connection->prepare("SELECT * FROM t_admin where username = ?");
+    $userQuery = $connection->prepare("SELECT * from t_track, t_armada where t_track.idt_armada=t_armada.idt_armada");
     $userQuery->execute(array($username));
     $query = $userQuery->fetch();
 
@@ -23,9 +23,8 @@ if($_POST){
             $response['status'] =true;
             $response['message']="Login berhasil";
             $response['data']=[
-                'user_id' => $query['idt_admin'],
+                'user_id' => $query['idt_track'],
                 'username' => $query['username'],
-                'name' => $query['name']
             ];
         } else {
             $response['status'] = false;

@@ -21,7 +21,15 @@ class LaporanTransaksi extends CI_Controller {
 			$this->load->view('header', $data);
 			$this->load->view('admin/laporantransaksi', $data);
 			$this->load->view('footer', $data);
-	    }else{
+	    }elseif($this->session->userdata('akses')=='2'){
+			$data['query'] = $this->M_laporantransaksi->tampil_data();
+			$data['t_transaksi'] = $this->M_laporantransaksi->tampil_data();
+
+			$this->load->view('header_super', $data);
+			$this->load->view('superadmin/laporantransaksi', $data);
+			$this->load->view('footer_super', $data);
+		} else
+		{
 			echo "Halaman Tidak ditemukan";
 		}
 		}		
