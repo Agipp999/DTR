@@ -1,6 +1,6 @@
 <?php
 require("koneksi.php");
-$perintah = "SELECT * FROM t_user";
+$perintah = "SELECT * FROM t_track";
 $eksekusi = mysqli_query($koneksi, $perintah);
 $cek = mysqli_affected_rows($koneksi);
 
@@ -10,7 +10,7 @@ if($cek > 0){
   $response["data"] = array();
 
   while($ambil = mysqli_fetch_object($eksekusi)){
-      $F["id"] = $ambil->idt_user;
+      $F["id"] = $ambil->idt_track;
       $F["name"] = $ambil->name;
       $F["username"] = $ambil->username;
       $F["password"] = $ambil->password;

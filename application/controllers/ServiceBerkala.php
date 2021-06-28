@@ -7,8 +7,9 @@ class ServiceBerkala extends CI_Controller {
         {
                 parent::__construct();
                 $this->load->model('M_serviceberkala');
-		$this->load->model('M_dataarmada');
+				$this->load->model('M_dataarmada');
                 $this->load->helper('url');
+				$this->load->helper('tgl_indo');
         }
 	public function index()	{
 		if($this->session->userdata('akses')=='1'){

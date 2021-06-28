@@ -10,7 +10,8 @@ class DataTransaksi extends CI_Controller {
 		$this->load->model('M_dataarmada');
 		$this->load->model('M_penyewa');
 		$this->load->model('M_pegawai');
-                $this->load->helper('url');
+		$this->load->helper('url');
+		$this->load->helper('tgl_indo');
         }
 	public function index(){
 		if($this->session->userdata('akses')=='1'){

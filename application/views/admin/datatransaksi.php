@@ -36,9 +36,9 @@
                           foreach ($t_transaksi as $u) {
                           echo"<tr>
                                   <td>".$no."</td>
-                                  <td>".$u->tanggalTransaksi."</td>
+                                  <td>".shortdate_indo($u->tanggalTransaksi)."</td>
                                   <td>".$u->namaPenyewa."</td>
-                                  <td>".$u->selesaiSewa."</td>
+                                  <td>".shortdate_indo($u->selesaiSewa)."</td>
                                   <td>".$u->totalHarga."</td>
                                   <td>".$u->statusPembayaran."</td>
                                   <td>".$u->keteranganSewa."</td>

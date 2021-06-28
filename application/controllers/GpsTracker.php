@@ -7,17 +7,20 @@ class GpsTracker extends CI_Controller {
     {
             parent::__construct();
             $this->load->model('M_GPS');
+            $this->load->model('M_dataarmada');
+            $this->load->model('M_datatransaksi');
             $this->load->helper('url');
 
-    }public function index() {
-            if($this->session->userdata('akses')=='1'){
+    }
+    public function index() {
+        if($this->session->userdata('akses')=='1'){
             $data = array(
                 'title' =>'GPS Tracker',
                 'gps'   =>$this->M_GPS->get_all_data(),
                 'isi'	=> 'admin/gpstracker');
                 
             $this->load->view('wrapper.php',$data, FALSE);
-            
+            //print_r($data);
         } else { 
             echo "Halaman Tidak ditemukan";
         }

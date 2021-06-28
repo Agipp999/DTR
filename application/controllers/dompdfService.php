@@ -6,6 +6,7 @@ class DompdfService extends CI_Controller {
 		$this->load->model('M_login');		
 		$this->load->model('M_laporanservice');
 		$this->load->helper('url');
+		$this->load->helper('tgl_indo');
 	}
 	
     public function index()

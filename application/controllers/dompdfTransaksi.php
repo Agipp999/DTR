@@ -7,6 +7,7 @@ class DompdfTransaksi extends CI_Controller {
 		$this->load->model('M_login');		
 		$this->load->model('M_laporantransaksi');
 		$this->load->helper('url');
+		$this->load->helper('tgl_indo');
 	}
 	
     public function index()

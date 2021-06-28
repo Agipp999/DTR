@@ -6,14 +6,17 @@ $response = array();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $latitude = $_POST["latitude"];
     $longitude = $_POST["longitude"];
-    $user_id = $_POST["user_id"];
+    $waktu = $_POST["waktu"];
+    $idt_track = $_POST["idt_track"];
+    $idt_armada = $_POST["idt_armada"];
+    $idt_transaksi = $_POST["idt_transaksi"];
 
     //$perintah = "INSERT INTO t_user (latitude, longitude) VALUES('$latitude','$longitude')";
-    $perintah = "UPDATE t_user SET latitude = '$latitude', longitude = '$longitude' WHERE idt_user = '$user_id'";
+    $perintah = "INSERT INTO t_track SET latitude = '$latitude', longitude = '$longitude', waktu = '$waktu', idt_armada = '$idt_armada', idt_transaksi = '$idt_transaksi' WHERE idt_track = '$idt_armada'";
     $eksekusi = mysqli_query($koneksi, $perintah);
     $cek      = mysqli_affected_rows($koneksi);
 
-    if($eksekusi){
+    if($cek > 0){
         $response["kode"] = 1;
         $response["pesan"] = "Simpan Data Berhasil";
     } else {
@@ -27,4 +30,3 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 echo json_encode($response);
-mysqli_close($koneksi);

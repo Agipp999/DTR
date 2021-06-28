@@ -40,7 +40,7 @@
             L.marker([<?= $value->latitude ?>,<?= $value->longitude ?>])
             .addTo(mymap)
             .bindPopup("<b>Lokasi Terkini</b><br>"+
-                        "Nama Armada : <?= $value->name?> <br>"+
+                        "Nama Armada : <?= $value->namaArmada?> <br>"+
                         "Latitude : <?= $value->latitude?> <br>"+
                         "Longitude : <?=$value->longitude?> <br>").openPopup();
         <?php } ?>

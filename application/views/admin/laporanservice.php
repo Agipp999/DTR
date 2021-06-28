@@ -32,7 +32,7 @@
                                   <td>".$no."</td>
                                   <td>".$u->namaArmada."</td>
                                       <td>".$u->noKendaraan."</td>
-                                      <td>".$u->tanggalService."</td>
+                                      <td>".shortdate_indo($u->tanggalService)."</td>
                                       <td>".$u->biayaService."</td>
                                       <td>".$u->keterangan."</td>
                                 </tr>";

@@ -59,14 +59,14 @@
                           </tr>
         </tr>
         <?php 
-                    $no = 1;
+                    $no = 0;
                     foreach($query  as $u){
                         $no++;
                         echo "<tr>";
                             echo "<td><center>".$no."</center></td>";
-                            echo "<td><center>".$u->tanggalTransaksi."</center></td>";
+                            echo "<td><center>".shortdate_indo($u->tanggalTransaksi)."</center></td>";
                             echo "<td><center>".$u->namaPenyewa."</center></td>";
-                            echo "<td><center>".$u->selesaiSewa."</center></td>";
+                            echo "<td><center>".shortdate_indo($u->selesaiSewa)."</center></td>";
                             echo "<td><center>".$u->totalHarga."</center></td>";
                             echo "<td><center>".$u->statusPembayaran."</center></td>";
                             echo "<td><center>".$u->keteranganSewa."</center></td>";

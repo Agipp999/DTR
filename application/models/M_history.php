@@ -5,13 +5,12 @@ class M_history extends CI_Model{
 		return $this->db->get('t_history');
 	}
 		
-	public function get_all_data($idt_user){
-		$query = $this->db->select('t_history.*, t_user.name')
-		->from('t_history')
-		->join('t_user', 't_history.idt_user = t_user.idt_user')
-		->where(array('t_history.idt_user' => $idt_user))
-		->get();
-		
+	public function get_all_data($idt_armada){
+		$query = $this->db->select('t_track.*, t_armada.namaArmada')
+		->from('t_track')
+		->join('t_armada', 't_track.idt_armada = t_armada.idt_armada')
+		->where(array('t_track.idt_armada' => $idt_armada))->get();
+
 		return $query;
 	}
 	function tambah_data() {

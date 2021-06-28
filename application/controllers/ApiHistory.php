@@ -8,11 +8,11 @@ class ApiHistory extends CI_Controller{
 	}
 
 	function index(){
-        $idt_user = $_GET['id'];
+        $idt_armada = $_GET['id'];
         if($this->session->userdata('akses')=='1'){
             $data = array(
                 'title' => 'History',
-                'gps'   => $this->M_history->get_all_data($idt_user),
+                'gps'   => $this->M_history->get_all_data($idt_armada),
                 'isi'	=> 'admin/history');
                 
             $this->load->view('wrapper.php',$data);

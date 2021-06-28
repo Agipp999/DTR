@@ -59,7 +59,7 @@
                             echo "<td><center>".$no."</center></td>";
                             echo"<td>".$u->namaArmada."</td>";
                             echo"<td>".$u->noKendaraan."</td>";
-                            echo"<td>".$u->tanggalService."</td>";
+                            echo"<td>".shortdate_indo($u->tanggalService)."</td>";
                             echo"<td>".$u->biayaService."</td>";
                             echo"<td>".$u->keterangan."</td>";
                             echo"</tr>";
