@@ -19,6 +19,13 @@ class ServiceBerkala extends CI_Controller {
 				$this->load->view('header', $data);
 				$this->load->view('admin/serviceberkala', $data);
 				$this->load->view('footer', $data);
+			}elseif($this->session->userdata('akses')=='2'){
+				$data['query'] = $this->M_serviceberkala->tampil_data();
+				$data['t_service'] = $this->M_serviceberkala->tampil_data();
+				
+				$this->load->view('header_super', $data);
+				$this->load->view('admin/serviceberkala', $data);
+				$this->load->view('footer_super', $data);
 			}else{
                 echo "Halaman Tidak ditemukan";
 		}

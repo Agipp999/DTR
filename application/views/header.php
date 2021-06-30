@@ -44,7 +44,7 @@
 					<li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="<?php echo base_url(); ?>otika/assets/img/userbaru.png" class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
 						<div class="dropdown-menu dropdown-menu-right pullDown">
 							<div class="dropdown-divider"></div>
-							<a href="<?php echo base_url() . 'login/logout' ?>" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
+							<a href="<?php echo base_url() . 'Login/logout' ?>" class="dropdown-item has-icon text-danger"> <i class="fas fa-sign-out-alt"></i>
 								Logout
 							</a>
 						</div>
@@ -62,26 +62,29 @@
 							<a href="<?php echo base_url('Welcome'); ?>" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Armada</span></a>
+							<a href="<?php echo base_url('Profile'); ?>" class="nav-link"><i data-feather="user"></i><span>Profil</span></a>
+						</li>
+						<li class="dropdown ">
+							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="sliders"></i><span>Master Data</span></a>
 							<ul class="dropdown-menu">
 								<li><a class="nav-link" href="<?php echo base_url('DataArmada'); ?>">Data Armada</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('DataPenyewa'); ?>">Data Penyewa</a></li>
+							</ul>
+						</li>
+						<li class="dropdown ">
+							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="briefcase"></i><span>Transaksi</span></a>
+							<ul class="dropdown-menu">
+								<li><a class="nav-link" href="<?php echo base_url('DataTransaksi'); ?>">Sewa Mobil</a></li>
+								<li><a class="nav-link" href="<?php echo base_url('GpsTracker'); ?>">GPS Tracker</a></li>
 								<li><a class="nav-link" href="<?php echo base_url('ServiceBerkala'); ?>">Service Berkala</a></li>
 							</ul>
-						</li><li class="dropdown">
-							<a href="<?php echo base_url('DataPenyewa'); ?>" class="nav-linkn"><i data-feather="user"></i><span>Data Penyewa</span></a>
 						</li>
-						<li class="dropdown">
-							<a href="<?php echo base_url('DataTransaksi'); ?>" class="nav-link"><i data-feather="command"></i><span>Data Transaksi</span></a>
-						</li>
-						<li class="dropdown">
+						<li class="dropdown ">
 							<a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="copy"></i><span>Laporan</span></a>
 							<ul class="dropdown-menu">
 								<li><a class="nav-link" href="<?php echo base_url('LaporanTransaksi'); ?>">Laporan Transaksi</a></li>
 								<li><a class="nav-link" href="<?php echo base_url('LaporanService'); ?>">Laporan Service</a></li>
 							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="<?php echo base_url('GpsTracker'); ?>" class="nav-link"><i data-feather="shopping-bag"></i><span>GPS Tracker</span></a>
 						</li>
 					</ul>
 				</aside>

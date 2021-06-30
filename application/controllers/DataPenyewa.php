@@ -17,6 +17,13 @@ class Datapenyewa extends CI_Controller {
                 $this->load->view('header', $data);
                 $this->load->view('admin/datapenyewa', $data);
                 $this->load->view('footer', $data);
+        }elseif($this->session->userdata('akses')=='2'){
+                $data['query'] = $this->M_penyewa->tampil_data();
+	        $data['t_penyewa'] = $this->M_penyewa->tampil_data();
+
+                $this->load->view('header_super', $data);
+                $this->load->view('admin/datapenyewa', $data);
+                $this->load->view('footer_super', $data);
         }else{
                 echo "Halaman Tidak ditemukan";
         }   

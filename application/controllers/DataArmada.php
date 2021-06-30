@@ -20,6 +20,13 @@ class DataArmada extends CI_Controller
 			$this->load->view('header', $data);
 			$this->load->view('admin/dataarmada', $data);
 			$this->load->view('footer', $data);
+		} elseif($this->session->userdata('akses') == '2'){
+			$data['query'] = $this->M_dataarmada->tampil_data();
+			$data['t_armada'] = $this->M_dataarmada->tampil_data();
+
+			$this->load->view('header_super', $data);
+			$this->load->view('admin/dataarmada', $data);
+			$this->load->view('footer_super', $data);
 		} else {
 			echo "Halaman Tidak ditemukan";
 		}

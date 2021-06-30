@@ -16,7 +16,14 @@ class ApiHistory extends CI_Controller{
                 'isi'	=> 'admin/history');
                 
             $this->load->view('wrapper.php',$data);
-        } else { 
+        } elseif($this->session->userdata('akses')=='2'){
+            $data = array(
+                'title' => 'History',
+                'gps'   => $this->M_history->get_all_data($idt_armada),
+                'isi'	=> 'admin/history');
+                
+            $this->load->view('wrapper.php',$data);
+        }else { 
             echo "Halaman Tidak ditemukan";
         }
     }

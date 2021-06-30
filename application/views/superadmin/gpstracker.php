@@ -35,9 +35,16 @@
             tileSize: 512,
             zoomOffset: -1
         }).addTo(mymap);
+        
+        var icon = L.icon({
+                            iconUrl: '<?= base_url('images/car2.png') ?>',
+                            iconSize: [45, 50], // size of the icon
+                        });
 
         <?php foreach ($gps->result() as $key => $value) { ?>
-            L.marker([<?= $value->latitude ?>,<?= $value->longitude ?>])
+            L.marker([<?= $value->latitude ?>,<?= $value->longitude ?>], {
+              icon:icon
+            })
             .addTo(mymap)
             .bindPopup("<b>Lokasi Terkini</b><br>"+
                         "Nama Armada : <?= $value->namaArmada?> <br>"+

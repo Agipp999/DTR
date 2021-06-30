@@ -25,8 +25,8 @@
     }
     navigator.geolocation.getCurrentPosition(function(location){
      var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
+
      console.log(location.coords.latitude, location.coords.longitude);
-     
      var mymap = L.map('mapid').setView([<?php echo $gps->first_row()->latitude .','.$gps->first_row()->longitude; ?>], 14);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
             maxZoom: 18,
@@ -36,10 +36,15 @@
             tileSize: 512,
             zoomOffset: -1
         }).addTo(mymap);
+        var icon = L.icon({
+                            iconUrl: '<?= base_url('images/car2.png') ?>',
+                            iconSize: [45, 50], // size of the icon
+                        });
         
         <?php foreach ($gps->result() as $key => $value) { ?>
-            L.marker([<?= $value->latitude ?>,<?= $value->longitude ?>])
-            .addTo(mymap)
+            L.marker([<?= $value->latitude ?>,<?= $value->longitude ?>], {
+              icon: icon
+            }).addTo(mymap)
             .bindPopup("<b>Lokasi Terkini</b><br>"+
                         "Nama Armada : <?= $value->namaArmada?> <br>"+
                         "<a href='https://www.google.com/maps/dir/?api=1&origin="  + 

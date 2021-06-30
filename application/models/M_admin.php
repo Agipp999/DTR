@@ -39,4 +39,8 @@ class M_admin extends CI_Model{
 		function hitung () {
 			return $this->db->count_all_results('t_admin');
 	}
+	//    function get_id_admin($id){
+    //     $this->db->where('idt_admin', $id);
+    //     return $this->db->get('t_admin')->row();
+    // }
 }

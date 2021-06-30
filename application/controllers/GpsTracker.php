@@ -21,7 +21,14 @@ class GpsTracker extends CI_Controller {
                 
             $this->load->view('wrapper.php',$data, FALSE);
             //print_r($data);
-        } else { 
+        } elseif($this->session->userdata('akses')=='2'){
+            $data = array(
+                'title' =>'GPS Tracker',
+                'gps'   =>$this->M_GPS->get_all_data(),
+                'isi'	=> 'admin/gpstracker');
+                
+            $this->load->view('wrapper_super.php',$data, FALSE);
+        }else { 
             echo "Halaman Tidak ditemukan";
         }
     }

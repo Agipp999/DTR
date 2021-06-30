@@ -36,5 +36,17 @@ class AdminAdmin extends CI_Controller {
                 $idt_admin = $this->input->post('idt_admin1');
                 $this->M_admin->hapus_data($idt_admin);
         }
+        // function profile($id){
+        //         $data['t_admin'] = $this->M_admin->get_id_admin($id);
+        //         if($data['t_admin']){
+                
+        //         $data['title'] ='Profil';
+        //         $this->load->view('header', $data);
+        //         $this->load->view('admin/profile', $data);
+        //         $this->load->view('footer', $data);    
+        //         }else{
+        //                 echo "Halaman Tidak ditemukan";
+        //         } 
+        // }
 	
 }

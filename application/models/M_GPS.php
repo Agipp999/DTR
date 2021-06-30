@@ -19,7 +19,11 @@ class M_GPS extends CI_Model{
 		$this->db->order_by("idt_track", "asc");
 		$query = $this->db->get();
 
+		//$query = $this->db->distinct()->select('idt_track')->get_where('t_track', array('idt_track' => $idt_track));
+        //return $query;
 
+		 $row = $this->db->select("*")->limit(1)->order_by('idt_armada',"DESC")->get("t_track")->row();
+		 echo $row->idt_armada;
 		return $query;
 	}
 

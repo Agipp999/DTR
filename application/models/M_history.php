@@ -15,7 +15,7 @@ class M_history extends CI_Model{
 	}
 	function tambah_data() {
 		$data = array(
-		    'idt_user' => $this->input->post('idt_user'),
+		    'idt_armada' => $this->input->post('idt_armada'),
             'waktu' => date("Y-m-d H:i:s"),
 			'latitude' => $this->input->post('latitude'),
 			'longitude' => $this->input->post('longitude')

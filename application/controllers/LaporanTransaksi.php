@@ -27,7 +27,7 @@ class LaporanTransaksi extends CI_Controller {
 			$data['t_transaksi'] = $this->M_laporantransaksi->tampil_data();
 
 			$this->load->view('header_super', $data);
-			$this->load->view('superadmin/laporantransaksi', $data);
+			$this->load->view('admin/laporantransaksi', $data);
 			$this->load->view('footer_super', $data);
 		} else
 		{
